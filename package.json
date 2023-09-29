@@ -2,8 +2,12 @@
   "name": "server",
   "version": "0.0.0",
   "private": true,
+  "homepage": "https://Deepthi-2024.github.io/client",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "predeploy": "npm run build",
+    "build": "babel app.js -o build/app.js --presets=@babel/preset-env",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -14,5 +18,11 @@
     "jade": "~1.11.0",
     "mongoose": "^7.5.2",
     "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20",
+    "gh-pages": "^6.0.0"
   }
 }
